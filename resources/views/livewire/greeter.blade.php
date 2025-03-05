@@ -8,11 +8,9 @@
     <form wire:submit="changeGreeting()">
         <div class="mt-6">
         <select type="text" class="p-4 border rounded-md bg-gray-700 text-white" wire:model.fill="greeting">
-
-            <option value="salam">Salam</option>
-            <option value="Hi">Hi</option>
-            <option value="Hey">Hey</option>
-            <option value="Howdy" selected>Howdy</option>
+            @foreach($greetings as $greet)
+                <option value="{{ $greet->greeting }}">{{ $greet->greeting }}</option>
+            @endforeach
         </select>
             <input type="text" wire:model="name" class="p-4 border rounded-md bg-gray-700 text-white" id="changeName">
         </div>
