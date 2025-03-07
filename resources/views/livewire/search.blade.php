@@ -17,15 +17,12 @@
     <div class="mt-6">
         @if($search)
         <h1 class="text-white">Search results for: "{{ $search }}"</h1>
-        <ul>
             @foreach($results as $result)
-            <li class="text-black
-                    p-4 border-b border-gray-700
-                    hover:bg-gray-800
-                    transition duration-300
-                    ease-in-out">
+            <a href="{{ route('show-article', $result->id) }}"
+                class="block text-black hover:bg-white-700 p-4 rounded-md"
+                >
                 {{ $result->title }}
-            </li>
+            </a>
             @endforeach
         </ul>
         @endif
