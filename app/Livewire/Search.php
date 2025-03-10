@@ -11,6 +11,7 @@ class Search extends Component
     #[Validate('required')]
     public $search = '';
     public $results = [];
+    public $placeholder = 'Enter to search...';
 
     public function clearSearch()
     {
